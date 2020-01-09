@@ -1,9 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import { imageAPI } from "../constants/constatns";
 import { ListElement } from "./ListElement";
 import { fetchListAction } from "../actions/fetchListAction";
-import { SearchBar } from "./SearchBar";
+import { fetchSinglePokemonAction } from "../actions/fetchSinglePokemonAction";
+import "./PokeList.css";
 
 class PokeList extends React.Component {
   componentDidMount() {
@@ -15,11 +17,14 @@ class PokeList extends React.Component {
       let number = element.url.split("/")[6];
 
       return (
-        <div key={number}>
+        <div
+          onClick={() => this.props.fetchSinglePokemonAction(number)}
+          key={number}
+        >
           <ListElement
             name={element.name}
             key={number}
-            image={`https://pokeres.bastionbot.org/images/pokemon/${number}.png`}
+            image={`${imageAPI}${number}.png`}
           />
         </div>
       );
@@ -27,17 +32,25 @@ class PokeList extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
-      <div className="ui placeholder segment">
-        <SearchBar />
-        <div>{this.renderList()} </div>
+      <div className="pokeList">
+        <div className="ui placeholder segment">
+          <div>{this.renderList()} </div>
+        </div>
       </div>
     );
   }
 }
+
 const mapStateToProps = state => {
-  return { pokeList: state.pokeList };
+  return {
+    pokeList: state.pokeList,
+    pokemonDetail: state.pokemonDetail
+  };
 };
 
-export default connect(mapStateToProps, { fetchListAction })(PokeList);
+export default connect(mapStateToProps, {
+  fetchListAction,
+
+  fetchSinglePokemonAction
+})(PokeList);

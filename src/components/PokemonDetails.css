@@ -1,0 +1,7 @@
+.pokeDetail {
+  display: inline-block;
+  position: sticky;
+  top: 20%;
+  left: 54%;
+  width: 45%;
+}

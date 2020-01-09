@@ -1,0 +1,8 @@
+.pokeList {
+  width: 40vw;
+  background-color: #eeeee8;
+  display: inline-block;
+  position: relative;
+  top: 40px;
+  left: 1%;
+}

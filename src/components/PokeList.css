@@ -2,7 +2,9 @@
   width: 40vw;
   background-color: #eeeee8;
   display: inline-block;
-  position: relative;
-  top: 40px;
+  position: absolute;
+  width: 49vw;
+  max-width: 400px;
+  top: 15%;
   left: 1%;
 }

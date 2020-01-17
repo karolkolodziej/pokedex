@@ -1,8 +1,9 @@
-.headerLogo {
-  padding-bottom: 1vw;
-  display: inline-block;
-  position: sticky;
-  transform: translate(-50%, 0%);
-  top: 1%;
-  left: 50%;
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+}
+
+body {
 }

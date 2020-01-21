@@ -4,11 +4,11 @@ import "./Header.css";
 export const Header = () => {
   return (
     <div className="headerLogo">
-      <h2 class="ui header">
+      <h2 className="ui header">
         <img src={require("../images/pokeLogo.png")} />
-        <div class="content">
+        <div className="content">
           Pokedex
-          <div class="sub header">Cach them all</div>
+          <div className="sub header">Cach them all</div>
         </div>
       </h2>
     </div>

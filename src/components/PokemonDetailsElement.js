@@ -14,7 +14,7 @@ export const PokemonDetailsElement = props => {
             <span className="date">Number: {number}</span>
           </div>
           <div className="description">
-            Type: {type1} {type2}
+            Type: {type1} || {type2}
           </div>
         </div>
         <div className="extra content">
